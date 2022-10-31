@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>my title</title>
+    <style>
+    .main {
+        max-width: 960px;
+        max-height: 960px;
+        display: grid;
+        grid-gap: 3px;
+        grid-template-columns: auto auto auto;
+    }
+
+    .field {
+        background: blue;
+        height: 25px;
+        width: 25px;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>Etch-A-Sketch</h1>
+    <div class="main"></div>
+
+    
+    <script>
+    const container = document.querySelector(".main");
+    let number = prompt("Please enter number of fields", 9);
+
+
+
+    for (let i = 0; i < number; i++) {
+        const content = document.createElement("div");
+        content.classList.add("field");
+        container.appendChild(content);
+    }
+    </script>
+</body>
+
+</html>
