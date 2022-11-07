@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>my title</title>
     <style>
     h1 {
@@ -11,18 +11,16 @@
     }
 
     .main {
-        width: 15px;
-        height: 15px;
-        max-width: 960px;
-        max-height: 960px;
+        width: 960px;
+        height: 960px;
         display: grid;
-        grid-gap: 3px;
+        grid-gap: 1px;
     }
 
     .field {
         background: blue;
-        height: 15px;
-        width: 15px;
+        height: auto;
+        width: auto;
         margin: 0;
         padding: 0;
     }
@@ -38,51 +36,34 @@
     <button>NEW GRID!</button>
     <div id="main" class="main"></div>
     <script>
-       const container = document.querySelector(".main");
-      const button = document.querySelector("button");
-      button.addEventListener("click", whatIsTheValue);
+    const container = document.querySelector(".main");
+    const button = document.querySelector("button");
+    button.addEventListener("click", whatIsTheValue);
 
-      function whatIsTheValue() {
+    function whatIsTheValue() {
         container.innerHTML = ""; //clear any previous grids
         let n = 0;
         let msg = "Please enter number of fields between 1 and 100.";
         //select 1 to 100 logic
         do {
-          n++;
-          if (n > 1) {
-            msg = "Number is out of range (1-100).";
-          }
-          number = prompt(msg, "1");
+            n++;
+            if (n > 1) {
+                msg = "Number is out of range (1-100).";
+            }
+            number = prompt(msg, "1");
         } while (number > 100 || number < 1);
 
         container.setAttribute(
-          "style",
-          `grid-template-columns: repeat(${number}, auto);`
+            "style",
+            `grid-template-columns: repeat(${number}, auto);`
         ); //add grid columns
         for (let i = 0; i < number * number; i++) {
-          const content = document.createElement("div");
-          content.classList.add("field"); //assign css to CSS grids
-          container.appendChild(content); //put grid divs into main
+            const content = document.createElement("div");
+            content.classList.add("field"); //assign css to CSS grids
+            container.appendChild(content); //put grid divs into main
         }
-      }
-
-
-
-
-
-
-
-
+    }
     </script>
 </body>
 
 </html>
-<!--
-enter a number 5
-creates 25 divs
-creates css to create a grid layout
-grid columns and rows would be 5 
-sets the width of the container to 960px
-sets the height of the container to 960px
-creates a gap of 1px
--->
