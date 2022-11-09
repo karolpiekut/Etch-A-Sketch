@@ -4,7 +4,7 @@ The Odin Project fundametals project. The goal is to create grid using JS for us
 
 To do:
 1. Button that makes a new grid - DONE 
-2. CSS clean structure clean up
+2. CSS clean structure clean up - DONE
 3. Limit entry to 100 - DONE
 4. Changed color to remain
 5. Random color grid
