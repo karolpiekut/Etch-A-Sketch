@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>my title</title>
@@ -45,11 +46,13 @@
         background-color: #F6F1E3;
     }
 
-    .field:hover {
-        background-color: black;
+    .active {
+        background: orange;
+        transition: all 0.2s ease;
     }
     </style>
 </head>
+
 <body>
     <h1>ETCH-A-SKETCH</h1>
     <button>NEW GRID!</button>
@@ -57,7 +60,9 @@
     <script>
     const container = document.querySelector(".main");
     const button = document.querySelector("button");
+
     button.addEventListener("click", whatIsTheValue);
+
     function whatIsTheValue() {
         container.innerHTML = ""; //clear any previous grids
         let n = 0;
@@ -75,12 +80,29 @@
             "style",
             `grid-template-columns: repeat(${number}, auto);`
         ); //add grid columns
+
         for (let i = 0; i < number * number; i++) {
             const content = document.createElement("div");
             content.classList.add("field"); //assign css to CSS grids
             container.appendChild(content); //put grid divs into main
         }
+
+        const newField = document.querySelectorAll(".field"); //select all grid divs
+        Array.from(newField).forEach(field =>
+            field.addEventListener("mouseover", changeColor)); //event listener on all divs, run changeColor when mouseover
+
+        function changeColor(event) {
+            event.target.classList.add("active"); //add class active to div grid
+        }
+
+
+
+
+
+
+
     }
     </script>
 </body>
+
 </html>
