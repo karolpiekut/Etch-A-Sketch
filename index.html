@@ -35,7 +35,7 @@
         display: grid;
         margin-left: auto;
         margin-right: auto;
-        grid-gap: .5px;
+        grid-gap: 1px;
     }
 
     .field {
@@ -47,15 +47,14 @@
     }
 
     .active {
-        background: orange;
         transition: all 0.2s ease;
     }
     </style>
 </head>
 
 <body>
-    <h1>ETCH-A-SKETCH</h1>
-    <button>NEW GRID!</button>
+    <h1>etch-a-sketch</h1>
+    <button>new grid</button>
     <div id="main" class="main"></div>
     <script>
     const container = document.querySelector(".main");
@@ -92,14 +91,19 @@
             field.addEventListener("mouseover", changeColor)); //event listener on all divs, run changeColor when mouseover
 
         function changeColor(event) {
+            const randomColor =
+                "#" + Math.floor(Math.random() * 16777215).toString(16);
+
+            event.target.setAttribute(
+                "style",
+                `background-color: ${randomColor}`
+            );
+
+
+            console.log("#" + randomColor);
+
             event.target.classList.add("active"); //add class active to div grid
         }
-
-
-
-
-
-
 
     }
     </script>
