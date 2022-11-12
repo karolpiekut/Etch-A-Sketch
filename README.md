@@ -7,7 +7,7 @@ To do:
 2. CSS clean structure clean up - DONE
 3. Limit entry to 100 - DONE
 4. Changed color to remain - DONE
-5. Random color grid
-6. A different color shade
+5. Random color grid - DONE
+6. A different color shade/gradient - pick it up one day
 
 
